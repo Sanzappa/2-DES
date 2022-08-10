@@ -1,4 +1,4 @@
-const Usuarios = [
+const usuarios = [
     {
         nome :"Santiago",
         nickname : "Santigas",
@@ -16,6 +16,15 @@ const Usuarios = [
     }
 ]
 
-function btLogin() {
-    window.location.href = "./loja.html";
+function login(){
+    var nome = document.getElementById("usuario").value
+    var senha = document.getElementById("senha").value
+
+    for(i = 0; i < usuarios.length; i++){
+        if(nome == usuarios[i].nome && senha == usuarios[i].senha){
+            window.location.href = "./loja.html";
+        }else{
+            console.log("ih, bobiou")
+        }
+    }
 }

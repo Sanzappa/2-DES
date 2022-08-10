@@ -1,4 +1,4 @@
-body, html{
+html, body{
     padding: 0;
     margin: 0;
     height: 100%;
@@ -35,11 +35,9 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-content: space-around;
     height: 100%;
-}
-
-.produto-item, img{
-    width: 150px;
+    margin-left: -15%;
 }
 
 .produto-item{
@@ -54,4 +52,53 @@ button{
 .baixo{
     display: flex;
     margin-left: 40%;
+}
+
+.navbar{
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(173, 169, 169);
+}
+
+.esquerda-n{
+    height: 100%;
+    display: flex;
+}
+
+.esquerda-n > h1{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1px;
+}
+
+.direita-n{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.direita-n > h2{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: rgb(0, 0, 0);
+}
+
+.direita-n > img{
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.produto-item, img{
+    width: 150px;
+    height: 150px;
+    border-radius: 0%;
 }
