@@ -1,0 +1,195 @@
+mysql -u root
+
+CREATE DATABASE CLIENTES;
+USE CLIENTES;
+
+CREATE TABLE Clientes (
+    id_cliente INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    nascimento DATE NOT NULL,
+    sexo VARCHAR(1) NOT NULL,
+    peso DOUBLE(3, 2) NOT NULL,
+    PRIMARY KEY (id_cliente)
+);
+
+CREATE TABLE Telefone(
+    id_cliente INT NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
+);
+
+
+--------------------------ACADEMIA
+
+
+CREATE DATABASE ACADEMIA;
+
+USE ACADEMIA;
+
+CREATE TABLE alunos (
+    id_aluno INT NOT NULL,
+    nome_aluno VARCHAR(200) NOT NULL,
+    nascimento DATE NOT NULL,
+    sexo VARCHAR(1) NOT NULL,
+    peso DOUBLE(3, 2) NOT NULL,
+    PRIMARY KEY (id_aluno)
+);
+
+CREATE TABLE Telefone(
+    id_aluno INT NOT NULL AUTO_INCREMENT,
+    telefone VARCHAR(20) NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno)
+);
+
+CREATE TABLE Aparelhos(
+    id_aparelho INT NOT NULL AUTO_INCREMENT,
+    aparelho VARCHAR(150),
+    PRIMARY KEY(id_aparelho)
+);
+
+CREATE TABLE exercicios(
+    id_exercicio INT NOT NULL AUTO_INCREMENT,
+    descricao_exercicio VARCHAR(150),
+    grupo_muscular VARCHAR(40)NOT NULL,
+    id_aparelho INT NOT NULL,
+    PRIMARY KEY(id_exercicio),
+    FOREIGN KEY (id_aparelho) REFERENCES Aparelhos(id_aparelho)
+);
+
+CREATE TABLE ficha_exercicios(
+    id_aluno INT NOT NULL,
+    id_exercicio INT NOT NULL,
+    dia_semana VARCHAR(40)NOT NULL,
+    serie VARCHAR(60)NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
+    FOREIGN KEY (id_exercicio) REFERENCES exercicios(id_exercicio)
+);
+
+-----------------------------ONIBUS
+CREATE DATABASE onibus;
+
+USE onibus;
+
+CREATE TABLE motoristas (
+    CPF VARCHAR(100) NOT NULL,
+    Nome_motorista VARCHAR(200) NOT NULL,
+    PRIMARY KEY (CPF)
+);
+
+CREATE TABLE telefones(
+    CPF VARCHAR(100) NOT NULL,
+    Telefone VARCHAR(20) NOT NULL,
+    FOREIGN KEY (CPF) REFERENCES motoristas(CPF)
+);
+
+CREATE TABLE linhas(
+    ID_Linha VARCHAR(150) NOT NULL,
+    Descrição_linha VARCHAR(150) NOT NULL,
+    PRIMARY KEY(ID_Linha)
+);
+
+CREATE TABLE horarios(
+    ID_Linha VARCHAR(150) NOT NULL,
+    Horarios VARCHAR(60) NOT NULL,
+    FOREIGN KEY (ID_Linha) REFERENCES linhas(ID_Linha)
+);
+
+CREATE TABLE mot_linha(
+    CPF VARCHAR(100) NOT NULL,
+    ID_Linha VARCHAR(150) NOT NULL,
+    data DATE NOT NULL,
+    FOREIGN KEY (CPF) REFERENCES motoristas(CPF),
+    FOREIGN KEY (ID_Linha) REFERENCES linhas(ID_Linha)
+);
+
+-----------------------------duplicatas
+CREATE DATABASE duplicatas;
+
+USE duplicatas;
+
+CREATE TABLE clientes (
+    cod_cli INT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(200) NOT NULL,
+    end VARCHAR(50) NOT NULL,
+    endereco VARCHAR(100) NOT NULL,
+    bairro VARCHAR(150) NOT NULL,
+    cidade VARCHAR(150) NOT NULL,
+    uf VARCHAR(20) NOT NULL,
+    PRIMARY KEY (cod_cli)
+);
+
+CREATE TABLE telefones (
+    cod_cli INT NOT NULL,
+    tipo VARCHAR(100) NOT NULL,
+    telefone VARCHAR(100) NOT NULL, 
+    FOREIGN KEY (cod_cli) REFERENCES clientes(cod_cli)
+);
+
+CREATE TABLE duplicatas (
+    num_dupli VARCHAR(100) NOT NULL,
+    cod_cli INT NOT NULL,
+    data_compra DATE NOT NULL,
+    vencimento DATE NOT NULL,
+    valor DOUBLE(3, 2) NOT NULL,
+    diferenca DOUBLE(4 ,2) NOT NULL,
+    v_final DOUBLE(4, 2) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    FOREIGN KEY (cod_cli) REFERENCES clientes(cod_cli)
+);
+
+-----------------------entregas
+
+CREATE DATABASE ENTREGAS;
+
+USE ENTREGAS;
+
+CREATE TABLE Clientes(
+    id_cliente INT NOT NULL AUTO_INCREMENT,
+    cpf VARCHAR(14) NOT NULL,
+    nome_cliente VARCHAR(255) NOT NULL,
+    cep VARCHAR(9) NOT NULL,
+    numero INT NOT NULL,
+    complemento VARCHAR(50),
+    PRIMARY KEY (id_cliente)
+);
+
+CREATE TABLE Telefones(
+    id_cliente INT NOT NULL,
+    telefone VARCHAR(14) NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
+);
+
+CREATE TABLE Entregadores(
+    id_entregador INT NOT NULL AUTO_INCREMENT,
+    nome_entregador VARCHAR(255) NOT NULL,
+    veiculo VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id_entregador)
+);
+
+CREATE TABLE Produtos(
+    id_produto INT NOT NULL AUTO_INCREMENT,
+    nome_produto VARCHAR(30) NOT NULL,
+    preco_unitario DOUBLE(3, 2) NOT NULL,
+    PRIMARY KEY (id_produto)
+);
+
+CREATE TABLE Pedidos(
+    id_cliente INT NOT NULL,
+    id_pedido INT NOT NULL AUTO_INCREMENT,
+    id_entregador INT NOT NULL,
+    data DATE NOT NULL,
+    hora_pedido TIME NOT NULL,
+    hora_entrega TIME,
+    hora_fim TIME,
+    PRIMARY KEY (id_pedido),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_entregador) REFERENCES Entregadores(id_entregador)
+);
+
+CREATE TABLE Itens(
+    id_pedido INT NOT NULL,
+    quantidade INT NOT NULL,
+    id_produto INT NOT NULL,
+    FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
+    FOREIGN KEY (id_produto) REFERENCES Produtos(id_produto)
+);
