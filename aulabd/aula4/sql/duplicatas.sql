@@ -1,6 +1,7 @@
-CREATE DATABASE duplicatas;
+drop database if exists duplicatas;
+create database duplicatas charset=UTF8 collate utf8_general_ci;
 
-USE duplicatas;
+use duplicatas;
 
 CREATE TABLE clientes (
     cod_cli INT NOT NULL AUTO_INCREMENT,
@@ -25,9 +26,31 @@ CREATE TABLE duplicatas (
     cod_cli INT NOT NULL,
     data_compra DATE NOT NULL,
     vencimento DATE NOT NULL,
+    pagamento DATE,
     valor DOUBLE(3, 2) NOT NULL,
     diferenca DOUBLE(4 ,2) NOT NULL,
     v_final DOUBLE(4, 2) NOT NULL,
     status VARCHAR(50) NOT NULL,
     FOREIGN KEY (cod_cli) REFERENCES clientes(cod_cli)
 );
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex4clientes.csv'
+INTO TABLE clientes
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex4telefones.csv'
+INTO TABLE telefones
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex4-duplicatas.csv'
+INTO TABLE duplicatas
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;

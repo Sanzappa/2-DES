@@ -1,54 +1,93 @@
-CREATE DATABASE ENTREGAS;
+drop database if exists entregas;
+create database entregas charset=UTF8 collate utf8_general_ci;
+use entregas;
 
-USE ENTREGAS;
-
-CREATE TABLE Clientes(
-    id_cliente INT NOT NULL AUTO_INCREMENT,
-    cpf VARCHAR(14) NOT NULL,
-    nome_cliente VARCHAR(255) NOT NULL,
-    cep VARCHAR(9) NOT NULL,
-    numero INT NOT NULL,
-    complemento VARCHAR(50),
-    PRIMARY KEY (id_cliente)
+create table clientes(
+    id_cliente integer not null primary key auto_increment,
+    cpf varchar(11) not null,
+    nome varchar(50) not null,
+    cep varchar(8) not null,
+    numero varchar(6) not null,
+    complemento varchar(20)
 );
 
-CREATE TABLE Telefones(
-    id_cliente INT NOT NULL,
-    telefone VARCHAR(14) NOT NULL,
-    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
+create table telefones(
+    id_cliente integer not null,
+    numero varchar(15) not null,
+    foreign key (id_cliente) references clientes(id_cliente)
 );
 
-CREATE TABLE Entregadores(
-    id_entregador INT NOT NULL AUTO_INCREMENT,
-    nome_entregador VARCHAR(255) NOT NULL,
-    veiculo VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id_entregador)
+create table entregadores(
+    id_entregador integer not null primary key auto_increment,
+    nome varchar(50) not null,
+    veiculo varchar(20) not null
 );
 
-CREATE TABLE Produtos(
-    id_produto INT NOT NULL AUTO_INCREMENT,
-    nome_produto VARCHAR(30) NOT NULL,
-    preco_unitario DOUBLE(3, 2) NOT NULL,
-    PRIMARY KEY (id_produto)
+create table produtos(
+    id_produto integer not null primary key auto_increment,
+    nome varchar(50) not null,
+    preco_unitario float(8,2) not null
 );
 
-CREATE TABLE Pedidos(
-    id_cliente INT NOT NULL,
-    id_pedido INT NOT NULL AUTO_INCREMENT,
-    id_entregador INT NOT NULL,
-    data DATE NOT NULL,
-    hora_pedido TIME NOT NULL,
-    hora_entrega TIME,
-    hora_fim TIME,
-    PRIMARY KEY (id_pedido),
-    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
-    FOREIGN KEY (id_entregador) REFERENCES Entregadores(id_entregador)
+create table pedidos(
+    id_cliente integer not null,
+    id_pedido integer not null primary key auto_increment,
+    id_intregador integer not null,
+    data date not null,
+    hora_pedido time,
+    hora_entrega time,
+    hora_fim time,
+    foreign key (id_cliente) references clientes(id_cliente),
+    foreign key (id_intregador) references entregadores(id_entregador)
 );
 
-CREATE TABLE Itens(
-    id_pedido INT NOT NULL,
-    quantidade INT NOT NULL,
-    id_produto INT NOT NULL,
-    FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
-    FOREIGN KEY (id_produto) REFERENCES Produtos(id_produto)
+create table itens(
+    id_pedido integer not null,
+    quantidade integer not null,
+    id_produto integer not null,
+    foreign key (id_pedido) references pedidos(id_pedido),
+    foreign key (id_produto) references produtos(id_produto)
 );
+
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex5-clientes.csv'
+INTO TABLE clientes
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex5-telefones.csv'
+INTO TABLE telefones
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex5-entregadores.csv'
+INTO TABLE entregadores
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex5-produtos.csv'
+INTO TABLE produtos
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex5-pedidos.csv'
+INTO TABLE pedidos
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex5-itens.csv'
+INTO TABLE itens
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;

@@ -1,35 +1,51 @@
-CREATE DATABASE onibus;
+drop database if exists onibus;
+create database onibus charset=UTF8 collate utf8_general_ci;
 
-USE onibus;
+use onibus;
 
-CREATE TABLE motoristas (
-    CPF VARCHAR(100) NOT NULL,
-    Nome_motorista VARCHAR(200) NOT NULL,
-    PRIMARY KEY (CPF)
-);
+-- Importação de arquivos CSV
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex3-motoristas.csv'
+INTO TABLE motoristas
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
 
-CREATE TABLE telefones(
-    CPF VARCHAR(100) NOT NULL,
-    Telefone VARCHAR(20) NOT NULL,
-    FOREIGN KEY (CPF) REFERENCES motoristas(CPF)
-);
+select * from motoristas;
 
-CREATE TABLE linhas(
-    ID_Linha VARCHAR(150) NOT NULL,
-    Descrição_linha VARCHAR(150) NOT NULL,
-    PRIMARY KEY(ID_Linha)
-);
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex3-telefones.csv'
+INTO TABLE telefones
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
 
-CREATE TABLE horarios(
-    ID_Linha VARCHAR(150) NOT NULL,
-    Horarios VARCHAR(60) NOT NULL,
-    FOREIGN KEY (ID_Linha) REFERENCES linhas(ID_Linha)
-);
+select * from telefones;
 
-CREATE TABLE mot_linha(
-    CPF VARCHAR(100) NOT NULL,
-    ID_Linha VARCHAR(150) NOT NULL,
-    data DATE NOT NULL,
-    FOREIGN KEY (CPF) REFERENCES motoristas(CPF),
-    FOREIGN KEY (ID_Linha) REFERENCES linhas(ID_Linha)
-);
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex3-linhas.csv'
+INTO TABLE linhas
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from linhas;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex3-horarios.csv'
+INTO TABLE horarios
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from horarios;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2-DES/aulabd/aula4/csv/ex3-mot_linha.csv'
+INTO TABLE mot_linha
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from mot_linha;
+
