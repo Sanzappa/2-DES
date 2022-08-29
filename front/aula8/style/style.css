@@ -1,0 +1,58 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    height: 8vh;
+    width: 200vh;
+    background-color: aquamarine;
+}
+
+.alunos{
+    height: 10vh;
+    width: 100vh;
+    margin-left: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cornsilk;
+
+}
+
+.exercicios{
+    height: 10vh;
+    width: 100vh;
+    margin-left: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(155, 153, 151);
+}
+
+.aparelhos{
+    height: 10vh;
+    width: 100vh;
+    margin-left: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(155, 153, 151);
+
+}
+
+.ex{
+    height: 10vh;
+    width: 100vh;
+    margin-left: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(155, 153, 151);
+
+}
