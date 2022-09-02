@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+#cima{
+    height: 8vh;
+    background-color: rgba(212, 25, 12, 0.938);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.page{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabela{
+    height: 50%;
+    width: 50%;
+    background-color: rgba(212, 25, 12, 0.938);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+}
+
+.tabelinha{
+    min-height: 10%;
+    width: 100%;
+}
+
+#linha{
+    justify-content: center;
+    align-items: center;
+}
+
+td{
+    text-align: center;
+}
+
+img{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+
+}
+
+.modelo{
+    visibility: hidden;
+    display: none;
+}
+
+.modal{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal-container{
+    height: 200px;
+    width: 300px;
+    background-color: rgb(199, 23, 23);
+    color: white;
+}
+.modal-container, td{
+    text-align: center;
+}
+

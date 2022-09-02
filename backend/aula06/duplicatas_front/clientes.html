@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/clientes.css">
+    <title>Clientes</title>
+</head>
+<body onload="carregar()">
+    <header id="cima">
+        <nav>
+            <h2>Duplicatas</h2>
+        </nav>
+    </header>
+
+    <div class="page">
+        <div class="tabela model" >
+            <table class="clientes">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>UF</th>
+                    <th>Telefones</th>
+                </tr>
+                <tr class="clone modelo">
+                    <td id="ID">1</td>
+                    <td id="nome">boa</td>
+                    <td id="endereco">rua</td>
+                    <td id="bairro">lugar</td>
+                    <td id="cidade">brasil</td>
+                    <td id="uf">SP</td>
+                    <td id="telefones"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal modelo">
+        <table class="modal-container">
+            <tr>
+                <th>Tipo</th>
+                <th>Numero</th>
+            </tr>
+            <tr class="linha">
+                <td id="tipo"></td>
+                <td id="numero"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="/clientes.js"></script>
+</html>
