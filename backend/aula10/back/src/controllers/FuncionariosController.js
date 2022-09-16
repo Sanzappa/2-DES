@@ -31,7 +31,7 @@ function listaFuncionario(req, res) {
 };
 
 function cadastrarFuncionario(req, res) {
-    let query = `INSERT INTO funcionarios VALUES (DEFAULT, '${req.body.matricula}', '${req.body.nome}', '${req.body.cargo}', '${req.body.salario}', '${req.body.cpf}')`;
+    let query = `INSERT INTO funcionarios VALUES (DEFAULT, '${req.body.matricula}', '${req.body.nome}', '${req.body.cargo}', ${req.body.salario}, '${req.body.cpf}')`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
@@ -55,7 +55,7 @@ function excluirFuncionario(req, res) {
 };
 
 function editarFuncionario(req, res){
-    let query = `UPDATE funcionarios SET matricula = '${req.body.matricula}', nome = '${req.body.nome}', cargo = '${req.body.cargo}', salario = ${req.body.salario}, cpf = ${req.body.cpf} WHERE matricula = '${req.body.matricula}'`;
+    let query = `UPDATE funcionarios SET matricula = '${req.body.matricula}', nome = '${req.body.nome}', cargo = '${req.body.cargo}', salario = ${req.body.salario}, cpf = '${req.body.cpf}' WHERE matricula = '${req.body.matricula}'`;
 
     conDB.query(query, (err, result) => {
         if(err == null) {
