@@ -1,12 +1,12 @@
-const Item = require('../models/item');
-const con = require('../models/estacionamentoDAO');
+const Item = require('../models/Item');
+const con = require('../models/patrimonioDAO');
 
 const criarItem = (req, res) => {
-    con.query(Item.toCreateClientes(req.body), (err, result) => {
+    con.query(Item.toCreate(req.body), (err, result) => {
         if (err == null)
             res.status(201).end();
         else
-            if (err.sqlState == 23000)
+            if (err.sqlState == 23000)//Se o ni já está cadastrado
                 res.status(406).json(err).end();
             else
                 res.status(500).json(err).end();
@@ -14,7 +14,7 @@ const criarItem = (req, res) => {
 }
 
 const listarItens = (req, res) => {
-    con.query(Item.toReadAllClientes(), (err, result) => {
+    con.query(Item.toReadAll(), (err, result) => {
         if (err == null)
             res.json(result).end();
         else
@@ -22,8 +22,20 @@ const listarItens = (req, res) => {
     });
 }
 
+const listarItem = (req, res) => {
+    con.query(Item.toRead(req.params), (err, result) => {
+        if (err == null)
+            if (result.length > 0)
+                res.json(result).end();
+            else
+                res.status(404).end();
+        else
+            res.status(500).end();
+    });
+}
+
 const alterarItem = (req, res) => {
-    con.query(Item.toUpdateClientes(req.body), (err, result) => {
+    con.query(Item.toUpdate(req.body), (err, result) => {
         if (err == null)
             if (result.affectedRows > 0)
                 res.status(200).end();
@@ -35,7 +47,7 @@ const alterarItem = (req, res) => {
 }
 
 const excluirItem = (req, res) => {
-    con.query(Item.toDeleteClientes(req.params), (err, result) => {
+    con.query(Item.toDelete(req.params), (err, result) => {
         if (err == null)
             if (result.affectedRows > 0)
                 res.status(204).end();
@@ -49,6 +61,7 @@ const excluirItem = (req, res) => {
 module.exports = {
     criarItem,
     listarItens,
+    listarItem,
     alterarItem,
     excluirItem
 }
