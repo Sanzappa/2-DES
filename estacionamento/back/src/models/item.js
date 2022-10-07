@@ -56,7 +56,7 @@ const toDeleteVagas = (model) => {
 }
 
 const toCreateEntradas = (model) => {
-    return `INSERT INTO entradas VALUES (DEFAULT, ${model.id_cliente}, ${model.id_veiculo}, '${model.data_entrada}', '${model.data_saida}', ${model.valor} )`;
+    return `INSERT INTO entradas VALUES (DEFAULT, ${model.id_cliente}, ${model.id_veiculo}, ${model.data_entrada}, ${model.data_saida}, ${model.valor} )`;
 }
 
 const toReadAllEntradas = () => {
