@@ -1,0 +1,29 @@
+package model;
+
+import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Aluno {
+	
+	Scanner scan = new Scanner(System.in);
+		
+	public int ra;
+	public String nome;
+	public Date nascimentoAluno;
+	public float[] notas = new float[4];
+	
+	public Aluno(int ra, String nome, Date nascimentoAluno) {
+		this.ra = ra;
+		this.nome = nome;
+		this.nascimentoAluno = nascimentoAluno;
+	}
+	private SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		
+		@SuppressWarnings("deprecation") 
+		public int idadeDoItem() {
+			Date hoje = new Date();
+			return hoje.getYear() - nascimentoAluno.getYear();
+	}
+		public String obterConceito
+}

@@ -1,0 +1,23 @@
+package ex;
+
+import java.util.Random;
+
+public class Matriz5 {
+
+	static Random r = new Random();
+	public static void main(String[] args) {
+
+		int maior, menor;
+		
+		int[][] m = new int[5][5];
+		
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				m[i][j] = r.nextInt(100);
+					
+			}
+		}
+		
+		
+	}
+}

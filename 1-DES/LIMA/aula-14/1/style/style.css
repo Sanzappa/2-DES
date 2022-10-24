@@ -1,0 +1,128 @@
+html, body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #dadde2;
+}
+
+header{
+    height: 6vh;
+    width: 100%;
+    background-color: #404853;
+    display: flex;
+    justify-content: space-between;
+}
+
+.esquerda{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pinguim{
+    height: 100%;
+}
+
+.pinguim > img{
+    height: 100%;
+}
+
+.qual{
+    color: #7e8186;
+}
+
+.direita{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.direita > span, img{
+    color: #7e8186;
+    margin-right: 20px;
+}
+
+.direita > img{
+    height: 50%;
+}
+
+.pagina{
+    height: calc(100% - 16vh);
+    width: calc(100% - 4vw);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+    padding: 5vh 2vw;
+}
+
+.div-esquerdo{
+    grid-area: 1/1/2/2;
+    background-color: white;
+}
+
+.div-direita{
+    grid-area: 1/2/3/3;
+    background-color: white;
+}
+
+.div-activities{
+    grid-area: 2/1/3/2;
+    background-color: white;
+}
+
+.div-esquerdo > span{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-esquerdo > h2{
+    margin-left: 10px;
+}
+
+.div-activities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+    }
+    
+    .div1 { 
+        grid-area: 1 / 1 / 2 / 2; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div2 { 
+        grid-area: 1 / 2 / 2 / 3; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div3 { 
+        grid-area: 2 / 1 / 3 / 2; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div4 { 
+        grid-area: 2 / 2 / 3 / 3; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div5 { 
+        grid-area: 3 / 1 / 4 / 2; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div6 { 
+        grid-area: 3 / 2 / 4 / 3; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div7 { 
+        grid-area: 4 / 1 / 5 / 2; 
+        background-color: rgb(135, 135, 248);
+    }
+    .div8 { 
+        grid-area: 4 / 2 / 5 / 3; 
+        background-color: rgb(135, 135, 248);
+    }

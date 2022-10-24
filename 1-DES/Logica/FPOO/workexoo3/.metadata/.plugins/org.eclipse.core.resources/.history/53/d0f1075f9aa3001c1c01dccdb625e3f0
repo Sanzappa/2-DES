@@ -1,0 +1,62 @@
+package visao;
+
+import java.util.Scanner;
+import modelo.Notas;
+import modelo.Aluno;
+
+public class Main {
+
+		static Aluno[] aluno = new Aluno[10];
+		public static void main(String[] args ) {
+			
+		
+		Scanner scan = new Scanner(System.in); 
+		
+		int menu = 0;
+		while(menu != 8) {
+			System.out.println("1- Cadastrar Alunos\n2- Cadastrar Notas\n3- Listar Todos os Alunos\n4- Listar Todas as Notas\n5- Obter os Dados de um Aluno Específico\n6- Listar Alunos Aprovados\n7- Listar Alunos Reprovados\n8- Sair ");
+			menu = scan.nextInt();
+			switch (menu) {
+			case 1:
+				
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				System.out.println("Até a proxima");
+				break;
+			default:
+				System.out.println("Digite um numero dentro dos parametros.");
+				break;
+			}
+		}
+	}
+		public static void cadastrarAlunos() {
+			
+			
+			Scanner scan = new Scanner(System.in);
+			int qtdAlunos = 0;
+			do {
+				System.out.println("Quantos alunos deseja cadastrar?");
+				 qtdAlunos = scan.nextInt();
+				Aluno[] Alunos = new Aluno[qtdAlunos];
+				
+				if(qtdAlunos > 10) {
+					
+				}	
+			} while (qtdAlunos > 10);
+			
+			
+			
+		}
+}

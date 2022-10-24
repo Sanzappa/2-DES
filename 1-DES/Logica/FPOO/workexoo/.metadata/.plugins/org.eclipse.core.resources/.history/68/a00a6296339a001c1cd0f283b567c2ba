@@ -1,0 +1,34 @@
+package agenda;
+
+import java.util.Iterator;
+import java.util.Scanner;
+import agenda.Contato;
+
+public class Main {
+	
+	static Scanner s = new Scanner(System.in);
+	public static void main(String[] args) {
+		System.out.println("Quantos contatos deseja cadastrar?");
+		int qtdeCont = s.nextInt();
+		
+		Contato[] contatos = new Contato[qtdeCont];
+		
+		for (int i = 0; i < contatos.length; i++) {
+			
+			System.out.println("DIgite o nome do Contato" + (i+1));
+			String nome = s.nextLine();
+			
+			System.out.println("Digite a idade do Contato " + (i+1));
+			int idade = s.nextInt();
+			
+			System.out.println("DIgite o telefone do Contato " + (i+1));
+			String tel = s.nextLine();
+			
+			contatos[i] = new Contato((i+1), nome, idade, tel);
+			
+			
+		}
+			
+	}
+
+}

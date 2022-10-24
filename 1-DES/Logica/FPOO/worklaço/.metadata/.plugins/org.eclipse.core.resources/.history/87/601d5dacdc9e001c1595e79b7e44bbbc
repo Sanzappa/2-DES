@@ -1,0 +1,79 @@
+package laço;
+
+import java.util.Scanner;
+
+public class Laço {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		int menu = 0;
+		
+		while( menu != 7) {
+			System.out.println("1- Numeros pares\n2- Numeros impares");
+			menu = entrada.nextInt();
+			
+			switch (menu) {
+			case 1:
+				System.out.println("Digite um valor: ");
+				int v1 = entrada.nextInt();
+				
+				System.out.println("Digite outro valor maior que o anterior: ");
+				int v2 = entrada.nextInt();
+				
+				System.out.println("Os valores pares são: ");
+				
+				if (v1 % 2 != 0) {
+					v1++;
+				}
+				
+				for (int i = v1; i < v2; i +=2) {
+				
+					System.out.println(i);
+				}
+				
+				break;
+			case 2:
+				System.out.println("Digite um valor: ");
+				int i1 = entrada.nextInt();
+				
+				System.out.println("Digite outro valor maior que o anterior: ");
+				int i2 = entrada.nextInt();
+				
+				System.out.println("Os valores impares são: ");
+				
+				if (i1 % 2 == 0) {
+					i1++;
+				}
+				
+				for (int i = i1; i < i2; i +=2) {
+				
+					System.out.println(i);
+				}
+				
+			case 3:
+				 int numbers[] = new int[]{33,53,73,94,22,45,23,87,13,63};
+	                int smallest = numbers[0];
+	                int biggest = numbers[0];
+	               
+	                for(int i=1; i< numbers.length; i++)
+	                {
+	                        if(numbers[i] > biggest)
+	                                biggest = numbers[i];
+	                        else if (numbers[i] < smallest)
+	                                smallest = numbers[i];
+	                       
+	                }
+	               
+	                System.out.println("O maior numero é: " + biggest);
+	                System.out.println("O menor numero é: " + smallest);
+	        }
+	}
+				
+			default:
+				break;
+			}
+			
+		}
+	}
+}

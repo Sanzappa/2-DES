@@ -1,0 +1,24 @@
+package laço;
+
+import java.util.Scanner;
+
+public class Laço {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Digite um valor: ");
+		int v1 = entrada.nextInt();
+		
+		System.out.println("Digite outro valor: ");
+		int v2 = entrada.nextInt();
+		
+		System.out.println("Os valores pares são: ");
+		
+		for (int i = v1; i < v2; i +=2) {
+		
+			System.out.println(i);
+		}
+		
+	}
+}

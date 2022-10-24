@@ -1,0 +1,10 @@
+package laço;
+
+public class Laço {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

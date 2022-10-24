@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;notas&apos; to &apos;model&apos;&#x0D;&#x0A;- Original project: &apos;Sistema de gestao&apos;&#x0D;&#x0A;- Original element: &apos;Sistema de gestao/src/notas&apos;&#x0D;&#x0A;- Renamed element: &apos;Sistema de gestao/src/model&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;notas&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;notas" name="model" qualified="false" references="true" stamp="1647004455335" textual="false" version="1.0"/>
+</session>

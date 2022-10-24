@@ -1,0 +1,21 @@
+package prova;
+
+import java.util.Scanner;
+public class Carnaval {
+
+	public static Scanner entrada;
+	public static void main(String[] args) {
+		
+		float val1, val2, result;
+		entrada = new Scanner(System.in);
+		
+		System.out.println("Infome o valor total de horas trabalhadas: ");
+		val1 = entrada.nextFloat();
+		System.out.println("Informe tambem as horas extras: ");
+		val2 = entrada.nextFloat();
+			
+		result = val1 + (val2/100*75);
+		
+	}
+
+}

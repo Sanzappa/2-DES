@@ -1,0 +1,120 @@
+package visao;
+
+import java.util.Scanner;
+import modelo.Notas;
+import modelo.Aluno;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class Main {
+
+	static Aluno[] aluno = new Aluno[10];
+
+	static SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+
+	public static void main(String[] args) throws ParseException {
+
+		Scanner scan = new Scanner(System.in);
+
+		int menu = 0;
+		while (menu != 8) {
+			System.out.println(
+					"1- Cadastrar Alunos\n2- Cadastrar Notas\n3- Listar Todos os Alunos\n4- Listar Todas as Notas\n5- Obter os Dados de um Aluno Específico\n6- Listar Alunos Aprovados\n7- Listar Alunos Reprovados\n8- Sair ");
+
+			menu = scan.nextInt();
+			switch (menu) {
+			case 1:
+				cadastrarAlunos();
+				break;
+
+			case 2:
+				cadastrarNotas();
+				break;
+			case 3:
+				listarAlunos();
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				System.out.println("Até a proxima");
+				break;
+			default:
+				System.out.println("Digite um numero dentro dos parametros.");
+				break;
+			}
+		}
+	}
+
+	public static void cadastrarAlunos() throws ParseException {
+
+		Scanner scan = new Scanner(System.in);
+		int qtdAlunos = 0;
+		do {
+			System.out.println("Quantos alunos deseja cadastrar?");
+			qtdAlunos = scan.nextInt();
+
+			for (int i = 0; i < qtdAlunos; i++) {
+				aluno[i] = new Aluno();
+				System.out.println("Digite o nome do aluno");
+				aluno[i].nome = scan.next();
+				System.out.println("Digite o ra do aluno");
+				aluno[i].ra = scan.nextInt();
+				System.out.println("Digite o nascimento do aluno");
+				aluno[i].nascimentoAluno = df.parse(scan.next());
+				System.out.println("Aluno cadastrado");
+			}
+
+			if (qtdAlunos > 10) {
+				System.out.println("Acima do limite(maximo de 10)");
+			}
+		} while (qtdAlunos > 10);
+	}
+
+	public static void cadastrarNotas() {
+		Scanner scan = new Scanner(System.in);
+		int qtdNotas = 0;
+
+		System.out.println("Digite o RA do aluno que deseja cadastrar: ");
+		int ra = scan.nextInt();
+
+		for (int i = 0; i < aluno.length; i++) {
+			if (aluno[i] != null && aluno[i].ra == ra) {
+				do {
+					System.out.println("Quantas notas deseja cadastrar? (max: 4)");
+					qtdNotas = scan.nextInt();
+
+					System.out.println("Digite á matéria\tnota-1\tnota-2\tnota-3");
+					for (int j = 0; j < qtdNotas; j++) {
+						aluno[i].notas[j].componente = scan.next();
+						for (int j2 = 0; j2 < aluno[i].notas[j].nota.length; j2++) {
+							aluno[i].notas[j].nota[j2] = scan.nextFloat();
+						}
+					}
+					if (qtdNotas > 4) {
+						System.out.println("Limite maximo atingido(4)");
+
+					}
+
+				} while (qtdNotas > 4);
+			}else {
+				System.out.println("RA não encontrado");
+			}
+		}
+	}
+
+	public static void listarAlunos() {
+		System.out.println("Nome\t        RA\tData de nascimento\tIdade");
+		for (int i = 0; i < aluno.length; i++) {
+			if (aluno[i] != null) {
+				System.out.println(aluno[i].paraString());
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+package visao;
+
+import java.util.Scanner;
+import modelo.Notas;
+import modelo.Aluno;
+
+public class Main {
+
+		static Aluno[] aluno = new Aluno[10];
+		public static void main(String[] args ) {
+			
+		
+		Scanner scan = new Scanner(System.in); 
+		
+		int menu = 0;
+		while(menu != 8) {
+			System.out.println("1- Cadastrar Alunos\n2- Cadastrar Notas\n3-  ");
+			
+		}
+	}
+}

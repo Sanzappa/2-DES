@@ -1,0 +1,42 @@
+package laço;
+
+import java.util.Scanner;
+
+public class Laço {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		
+		int menu = 0;
+		
+		while( menu != 7) {
+			System.out.println("\n1- Numeros pares\n2- Numeros impares");
+			
+			switch (menu) {
+			case 1:
+				System.out.println("Digite um valor: ");
+				int v1 = entrada.nextInt();
+				
+				System.out.println("Digite outro valor: ");
+				int v2 = entrada.nextInt();
+				
+				System.out.println("Os valores pares são: ");
+				
+				if (v1 % 2 != 0) {
+					v1++;
+				}
+				
+				for (int i = v1; i < v2; i +=2) {
+				
+					System.out.println(i);
+				}
+				
+				break;
+
+			default:
+				break;
+			}
+			
+		}
+	}
+}

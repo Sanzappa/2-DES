@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/wind.jpg");
+    background-size: cover;
+    height: 100vh;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+.pagina{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+.menu{
+    display: flex;
+    height: 70vh;
+    width: 34vw;
+    background-color: rgba(53,60,66,255);
+}
+.l-bar{
+    width: 8%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.l-bar-ic{
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.l-bar-ic img{
+    width: 20px;
+}
+.l-bar-body .l-bar-ic{
+    margin-bottom: 20px;
+}
+.productivity-explore{
+    width: 50%;
+    height: 100%;
+}
+.productivity{
+    width: 100%;
+    height: 60%;
+    color: white;
+    margin-top: 20px;
+}
+.u-pfp img{
+    border-radius: 50%;
+}
+.titulo{
+    color: white;
+}
+.recently-added{
+    padding: 10px;
+    margin-top: 12px;
+}
+.active img{
+    height: 30px;
+    background-color: rgba(64,64,64,255);
+    margin-right: 10px;
+}
+.h-menu img{
+    margin-top: 20px;
+}
+.recently-added-c{
+    display: flex;
+    color: white;
+    align-items: center;
+    height: 35px;
+    margin-top: 10px;
+}
+.titulo span{
+    font-size: 1.1rem;
+}
+.task-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    margin-left: 10px;
+}
+
+.task-img img{
+    width: 20px;
+    height: 20px;
+}
+.task-img{
+    color: white;
+}
+.task-bar-left{
+    display: flex;
+    
+}
+.taskbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(30,36,48,255);
+}
+.task-bar-right{
+    display: flex;
+    padding-right: 10px;
+}

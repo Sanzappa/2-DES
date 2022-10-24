@@ -1,0 +1,112 @@
+html, body{
+    height: 100%;
+}
+
+.todos{
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-template-rows: 30vh 30vh 30vh;
+    grid-template-areas: "c1 c2 c3" "m1 m2 m3" "b1 b2 b3";
+    padding-left: 25%;
+    
+}
+
+.todos > div{
+    border: 3px solid black;
+}
+
+.div1{
+    height: 100%;
+    grid-area: c1;
+    background-color: white;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/75/75519.png');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-left: none!important;
+    border-top: none!important;
+}
+
+.div2{
+    height: 100%;
+    grid-area: c2;
+    background-color: white;
+    background-image: url("https://img.icons8.com/ios/500/circled.png");
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-top: none!important;
+}
+.div3{
+    height: 100%;
+    grid-area: c3;
+    background-color: white;
+    background-image: url("https://img.icons8.com/ios/500/circled.png");
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-right: none!important;
+    border-top: none!important;
+}
+.div4{
+    height: 100%;
+    grid-area: m1;
+    background-color: white;
+    background-image: url("https://img.icons8.com/ios/500/circled.png");
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-left: none!important;
+}
+.div5{
+    height: 100%;
+    grid-area: m2;
+    background-color: white;
+    background-image: url("https://img.icons8.com/ios/500/circled.png");
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+}
+.div6{
+    height: 100%;
+    grid-area: m3;
+    background-color: white;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/75/75519.png');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-right: none!important;
+}
+.div7{
+    height: 100%;
+    grid-area: b1;
+    background-color: white;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/75/75519.png');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-left: none!important;
+    border-bottom: none!important;
+}
+.div8{
+    height: 100%;
+    grid-area: b2;
+    background-color: white;
+    background-image: url("https://img.icons8.com/ios/500/circled.png");
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-bottom: none!important;
+}
+.div9{
+    height: 100%;
+    grid-area: b3;
+    background-color: white;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/75/75519.png');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-right: none!important;
+    border-bottom: none!important;
+}
