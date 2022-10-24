@@ -13,7 +13,7 @@ const cadastrarCliente = async (req, res) => {
             con.query(string, (err, result) => {
                 if (err == null) {
                     //res.status(201).json(dados).end();
-                    res.redirect('http://127.0.0.1:5500/front/cadastros.html');
+                    res.redirect('http://127.0.0.1:5500/front/index.html')
                 } else {
                     res.status(500).json(err).end();
                 }

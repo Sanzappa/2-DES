@@ -8,4 +8,4 @@ create table cadastros(
     foto mediumblob
 );
 
-select * from blobs;
+select * from cadastros;
