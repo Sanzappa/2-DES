@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'pokemon_gbregular';
+    src: url('./fonts/pokemon/pokemon_gb-webfont.woff2') format('woff2'),
+         url('./fonts/pokemon/pokemon_gb-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.747);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'pokemon_gbregular';
+}
+
+.header{
+    height: 15vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 37);
+    display: flex;
+    align-items: center;
+}
+
+.header>img{
+    height: 100px;
+}
