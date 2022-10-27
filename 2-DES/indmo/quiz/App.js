@@ -7,6 +7,7 @@ import pergunta2 from './src/pages/pergunta2';
 import pergunta3 from './src/pages/pergunta3';
 import pergunta4 from './src/pages/pergunta4';
 import pergunta5 from './src/pages/pergunta5';
+import resultado from './src/pages/Resultado';
 
 
 const Stack = createNativeStackNavigator();
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Pergunta 3" component={pergunta3} />
         <Stack.Screen name="Pergunta 4" component={pergunta4} />
         <Stack.Screen name="Pergunta 5" component={pergunta5} />
+        <Stack.Screen name="Resultado" component={resultado} />
       </Stack.Navigator>
     </NavigationContainer>
   );
