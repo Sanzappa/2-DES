@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <title>Pokedex</title>
 </head>
-<body>
+<body onload="pokeload()">
     <header class="header" ><img src="/assets/pokedex.png" alt=""></header>
     <main>
         <div class="page">
-            <div class="card"></div>
+            <div class="card model">
+                <img id="pokeImg" class="card-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif" alt="">
+                <span id="pokeName">Charmander</span>
+            </div>
         </div>
     </main>
+    <button id="botao" onclick="pokeload()">Mais...</button>
 </body>
 <script src="script.js"></script>
 </html>
