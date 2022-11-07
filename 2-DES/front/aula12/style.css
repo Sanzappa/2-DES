@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Commissioner:wght@200;300&family=Ubuntu&display=swap');
+
+body{
+    font-family: 'Commissioner', sans-serif;
+    margin: 0;
+    background-color: rgba(238, 31, 31, 0.514);
+}
+
+.nav-bar{
+    background-image: url("/images/image-hero-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-left{
+    padding-top: 50px;
+    padding-right: 40px;
+}
+
+.nav-right{
+    padding-top: 50px;
+    color: white;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-right>span{
+    cursor: pointer;
+}
+
+.cardzao1{
+    height: 30vh;
+    width: 50vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: -50px;
+}
+
+.all-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem{
+    display: flex;
+    align-items: center;
+    margin-top: -30px;
+}
+
+.card1-b{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: hsl(176, 50%, 47%);
+}
+
+#back{
+    border-radius: 50px;
+    width: 200px;
+    color: white;
+    background-color: hsl(176, 50%, 47%);
+    border: 0;
+}
+
+#back:hover{
+    background-color: hsl(176, 72%, 28%);
+    transition: 0.3s;
+}
+
+.bookmark{
+    display: flex;
+    align-items: center;
+}
+
+.bookmark>span{
+    margin-left: 10px;
+    color:hsl(0, 0%, 0%);
+}
+
+.cardzao2{
+    height: 20vh;
+    width: 50vw;
+    background-color: white;
+    margin-top: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#backed{
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#backers{
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#days{
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.bar{
+    width: 30%;
+    
+}
+
+.backers{
+    width: 30%;
+}
+
+.dias{
+    width: 30%;
+}
+

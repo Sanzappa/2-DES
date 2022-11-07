@@ -21,10 +21,7 @@ function pokeload(){
 
                     document.querySelector(".page").appendChild(i)
                     i.querySelector("#pokeName").innerHTML = data.name
-
             })
-
         })
-        
     })
 }
