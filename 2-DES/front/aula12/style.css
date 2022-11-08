@@ -95,8 +95,16 @@ body{
     margin-top: 40px;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    
+}
+
+.header-card{
+    width: 100%;
+    height: 70%;
+    display: flex;
 }
 
 #backed{
@@ -117,16 +125,25 @@ body{
     font-weight: 700;
 }
 
-.bar{
+.bar, .backers, .days{
     width: 30%;
-    
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   padding-left: 5%;
 }
 
-.backers{
-    width: 30%;
+.grey-bar{
+    width: 90%;
+    height: 20px;
+    background-color: rgb(122, 122, 122);
+    border-radius: 25px;
 }
 
-.dias{
-    width: 30%;
+.green-bar{
+    background-color: hsl(176, 50%, 47%);
+    height: 100%;
+    width: 89%;
+    border-radius: 25px;
 }
-
