@@ -1,0 +1,36 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(92, 206, 143)
+
+}
+
+.veiculos{
+    padding: 10px;
+    background-color: rgb(42,118,76);
+    height:50vh;
+    width: 70vw;
+    /* margin-top:10vh ; */
+    border-radius:10px;
+    font-size: 1.0vw;
+
+}
+.veiculos th{
+    background-color: rgba(24, 78, 49, 0.979);
+    border-radius: .7vh;
+    padding: 8px;
+    height: 4vh;
+    width: 10%;
+    font-size: 1.0vw;
+    color: rgba(255, 255, 255, 0.979);
+    letter-spacing: 1.0vh;
+}
+

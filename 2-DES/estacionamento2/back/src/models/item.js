@@ -38,7 +38,7 @@ const toDeleteVeiculos = (model) => {
 }
 
 const toCreateVagas = (model) => {
-    return `INSERT INTO vagas VALUES (DEFAULT,'${model.disponivel}')`;
+    return `INSERT INTO vagas VALUES ('${model.id}','${model.disponivel}')`;
 }
 
 const toReadAllVagas = () => {
@@ -48,7 +48,7 @@ const toReadAllVagas = () => {
 const toUpdateVagas = (model) => {
     return `UPDATE vagas SET 
                 disponivel = '${model.disponivel}'
-                WHERE id = ${model.id}`;
+                WHERE id = '${model.id}'`;
 }
 
 const toDeleteVagas = (model) => {
@@ -56,17 +56,17 @@ const toDeleteVagas = (model) => {
 }
 
 const toCreateEntradas = (model) => {
-    return `INSERT INTO entradas VALUES (DEFAULT, ${model.id_cliente}, ${model.id_veiculo}, ${model.data_entrada}, ${model.data_saida}, ${model.valor} )`;
+    return `INSERT INTO entrada VALUES (DEFAULT, ${model.id_cliente}, ${model.id_veiculo}, curdate(), '${model.hora_entrada}', '${model.hora_saida}', ${model.valor} )`;
 }
 
 const toReadAllEntradas = () => {
-    return "SELECT * FROM entradas";
+    return "SELECT * FROM entrada";
 }
 
 const toUpdateEntradas = (model) => {
-    return `UPDATE entradas SET 
-                data_entrada = '${model.data_entrada}',
-                data_saida = '${model.data_saida}',
+    return `UPDATE entrada SET 
+                data_entrada = '${model.hora_entrada}',
+                data_saida = '${model.hora_saida}',
                 valor = ${model.valor}
                 WHERE id = ${model.id}`;
 }

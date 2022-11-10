@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/* body > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    gap: 40px;
+} */
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+ul > li{
+    float: left;
+    margin:0 15px;
+    color: #fff;
+    
+   
+}
+#oi{
+    font-size: 1.3vw;
+    letter-spacing: .1vh;
+    width: 32vw;
+    height:3.5vh;
+    /* border-radius: 0 0 1vh 1vh; */
+    border-radius: 10px;
+    background-color: rgb(92, 206, 143);
+    box-shadow: .2vh .2vh .5vh rgba(46, 146, 91, 0.979);
+    border: solid 0px white;
+    font-weight: bold;
+    font-family: georgia;
+    color: rgb(35, 95, 62);
+}
+a{
+    padding: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    /* font-size: 20px; */
+    font-size:18px;
+}
+a::after{
+    content:'';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background-color: rgb(106,203,149);
+    transition: all .6s;
+}
+a:hover::after{
+    width:60%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color:rgb(42,118,76);
+    width: 100%;
+    height: 90px;
+}
+#logo{
+    width: 65px;
+}
+#img{
+    width: 30vw;
+    /* box-shadow: rgba(68, 161, 84, 0.2) 0px 7px 29px 0px; */
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:60px 50px;
+    gap: 5rem;
+}
+.principal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color:rgb(42,118,76);
+    height: 34vh;
+    width: 31vw;
+    border-radius: 10px;
+    color: #fff;
+    gap: 15px;
+      box-shadow: rgba(74, 167, 89, 0.336) 0px 7px 29px 0px;
+      margin-bottom: 25vh;
+
+}
+#h2{
+    margin: 15px;
+    margin-bottom:5px;   
+    font-size: 1.5vw;
+}
+.sub p{
+    margin: 10px;
+    font-size: 1.4vw;
+    /* margin-top: 4vh; */
+    font-weight: bold;
+    display: inline-flex;
+}
+.sub{
+    margin-bottom:40px;  
+}
+
+.sub input{
+    align-items: center;
+    border-radius: 0.9vw;
+    height: 3.5vh;
+    width: 20vw;
+    margin-left: .5vh;
+    font-size: 1.2vw;
+    letter-spacing: .03vw;
+    text-indent: 1ch;
+    border: solid .15vw  rgb(106,203,149); 
+}
+.footer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 6px;
+}
+.footer button{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  display: inline-flex;
+  height: 4vh;
+  width: 7vw;
+  border-radius: 5vh;
+  background-color: rgb(106,203,149);
+  margin: 3vw 2vh;
+  border: solid 1px rgb(92, 206, 143);
+  font-size: 1vw;
+  font-weight: bold;
+  color: white;  
+  font-size: 1.2vw;
+}
+.footer button:hover{
+    background-color:rgb(46, 212, 121);
+    cursor: pointer;
+}
+#btnRelatorio{
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+    gap: 25px;
+    /* margin-bottom:10vh; */
+}
+.Relatorio1{
+    font-size: 1.3vw;
+    letter-spacing: .1vh;
+    width: 32vw;
+    height:3.5vh;
+    /* border-radius: 0 0 1vh 1vh; */
+    border-radius: 10px;
+    background-color: rgb(92, 206, 143);
+    box-shadow: .2vh .2vh .5vh rgba(46, 146, 91, 0.979);
+    border: solid 0px white;
+    font-weight: bold;
+    font-family: georgia;
+    color: rgb(35, 95, 62);
+ 
+}
+.Relatorio1:hover{
+    background-color:rgb(46, 212, 121);
+}
+
+
+.campos-veiculo th{
+    background-color: rgba(46, 146, 91, 0.979);
+    border-radius: .7vh;
+    padding: 10px;
+    height: 4vh;
+    width: 16%;
+    font-size: 1.0vw;
+    color: rgba(8, 94, 25, 0.979);
+    letter-spacing: 1.0vh;
+}
+
+.model{
+    display: none;
+    visibility: hidden;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 9%;
+    left: 0%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(103, 155, 105, 0.247);
+  
+}
+.modal-content {
+    width: 40vw;
+    height: 30vh;
+    background-color: rgba(45, 151, 54, 0.592);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:15px;
+    padding: 20px 40px;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    
+}
+
+.modal-content-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.modal-content > button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px 30px;
+}
+
+.modal-content-body {
+    margin-top: 10px;
+    display:flex ;
+    flex-direction: column;
+}
+
+.icone{
+    width: 20px;
+}
+input{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #0d3116;
+}
+
+.cancel {
+    /* margin: 10px; */
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: #fa2828; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.cancel:hover{
+    background-color: #ff0b0b; 
+}
+.confirm:hover{
+    background-color: #1c8a37;
+}
+.confirm {
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: #206d33;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 600px){
+
+    .principal {    
+        align-items: center;
+        height: 25vh;
+        width: 35vw;
+    }
+    .principal input {   
+        display: inline-flex;
+      justify-content: center;
+      height: 2.5vh;
+      border-radius:10px;
+      font-size:0.9vh;
+
+    }
+
+    .footer button {    
+        height: 4vh;
+        width: 7vw;
+        border-radius: 15px;
+        font-size: 1.3vw;
+        margin-bottom: 25px;
+    }
+    #btnRelatorio button{
+        font-size:1.2vh;
+    }
+  
+  #img{
+    width: 39vw;
+    /* margin-top:10vh; */
+  }
+  .img2{
+    width: 30vw;
+  }
+
+ header{
+    width: 100%;
+    height: 60px; 
+ }
+ header li{
+    font-size:1.2vh;
+ }
+
+ #logo{
+    width: 10vw;
+ }
+ .campos-veiculo th{
+    height: 3vh;
+    width: 5vw;
+    font-size: 1.5vw;
+    padding:7px;
+
+ }
+ .tabela-veiculos table{
+       width: 13vw;
+
+   
+ }
+ .veiculos{
+     margin-top:19vh ;
+}
+   
+ 
+  
+}
+
+

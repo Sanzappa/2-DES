@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><img id="logo" src="../src/img/Quem_somos__1_-removebg-preview.png" alt="car/family"></li>
+        </ul>
+        <ul>
+           <li><a href="">Quem somos</a></li>
+           <li><a href="">Contato</a></li>
+        </ul>
+    </header>
+    <main>
+
+        <div class="img2">
+            <img id="img" src="../src/img/Parking-amico.png" alt="">
+
+            <div class="tabelaVeiculos">
+                <div class="veiculos">
+                    <table class="tabela-veiculos">
+                        <thead class="campos-veiculo">
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nome</th>
+                                <th>Placa</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody class="registros-veiculo" id="registros">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+        </div>
+
+        <div class="principal">
+            <h2 id="h2">Procurar veículos</h2>
+            <div class="sub">
+            <p>Placa:</p>
+            <input type="text" id="placa" placeholder="Insira a placa">
+            <p>Nome:</p>
+            <input type="password" id="psw" placeholder="Insira seu nome">
+
+            <div class="footer">
+                <button>Procurar</button>
+                <button onclick='abrirModalCadastro()'>Cadastrar</button>
+            </div>
+
+        </div>
+        <div id="btnRelatorio">
+            <button class="Relatorio1" title="Ver clientes"><a id="oi" href="clientes/index.html">Clientes</a></button>
+            <button class="Relatorio1" title="Ver Relatório">Registro de entrada</button>
+            <button class="Relatorio1" title="Vagas">Vagas disponível</button>
+        </div>
+          <!-- TABELA DOS VEICULOS -->
+    </main>
+    <div class="modal editar model"> 
+        <div class="modal-content">
+            <button onclick="fecharModalCadastro()"><img class="icone" src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png"  alt="Icone de Fechar"> </button>
+         <div class="modal-content-body"> 
+        <input type="text" class="input" id="nome" placeholder="nome">
+        <input type="text"  class="input" id="endereco" placeholder="endereco">
+        <input type="text"  class="input" id="telefone" placeholder="telefone">
+     </div> 
+    <div class="modal-content-footer">
+        <button onclick="cadastrar()" id="cadastro" class="btn confirm">Cadastrar</button>
+        <button onclick="fecharModalCadastro()" class="btn cancel">Cancelar</button>
+    </div>
+</body>
+   <script src="script.js"></script>
+</html>
