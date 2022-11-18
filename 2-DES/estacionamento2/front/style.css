@@ -272,15 +272,15 @@ input{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 820px){
 
     .principal {    
         align-items: center;
-        height: 25vh;
+        height: 20vh;
         width: 35vw;
     }
     .principal input {   
-        display: inline-flex;
+      display: inline-flex;
       justify-content: center;
       height: 2.5vh;
       border-radius:10px;
@@ -332,6 +332,12 @@ input{
  }
  .veiculos{
      margin-top:19vh ;
+}
+#oi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vh;
 }
    
  

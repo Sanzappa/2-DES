@@ -12,12 +12,22 @@ body{
     background-color: rgb(92, 206, 143)
 
 }
+tbody tr:nth-child(odd) {
+    background-color:rgba(92, 206, 143, 0.233);
+}
+
+tbody tr:nth-child(even) {
+    background-color:rrgba(155, 218, 149, 0.575)
+}
+
 
 .veiculos{
+    display: flex;
+    flex-direction: row;
     padding: 10px;
     background-color: rgb(42,118,76);
-    height:50vh;
-    width: 70vw;
+    height:60vh;
+    width: 80vw;
     /* margin-top:10vh ; */
     border-radius:10px;
     font-size: 1.0vw;
@@ -26,11 +36,19 @@ body{
 .veiculos th{
     background-color: rgba(24, 78, 49, 0.979);
     border-radius: .7vh;
-    padding: 8px;
-    height: 4vh;
-    width: 10%;
-    font-size: 1.0vw;
+    padding: 10px;
+    height: 5vh;
+    width: 16%;
+    font-size: 1.1vw;
     color: rgba(255, 255, 255, 0.979);
     letter-spacing: 1.0vh;
 }
+ .veiculos td{
+    padding: 10px;
+    font-size:1.9vh;
+    color: #fff;
+    /* padding-left: 9vh; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 

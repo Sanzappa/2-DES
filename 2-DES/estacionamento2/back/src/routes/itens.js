@@ -8,7 +8,7 @@ const ItemVeiculos = require("../controllers/veiculosController");
 
 router.post("/estacionamento/clientes", ItemCliente.criarItem);
 router.get("/estacionamento/clientes", ItemCliente.listarItens);
-router.put("/estacionamento/clientes", ItemCliente.alterarItem);
+router.get("/estacionamento/clientes/view", ItemCliente.listar);
 router.delete("/estacionamento/clientes/:id", ItemCliente.excluirItem);
 
 router.post("/estacionamento/entrada", ItemEntradas.criarItem);

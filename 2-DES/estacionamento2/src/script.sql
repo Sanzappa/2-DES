@@ -12,8 +12,11 @@ CREATE TABLE clientes (
 
 CREATE TABLE veiculos (
     id_veiculo  INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    placa VARCHAR(60) NOT NULL UNIQUE,
-    tipo VARCHAR(60) NOT NULL
+    id_cliente INTEGER NOT NULL,
+    placa VARCHAR(50) NOT NULL UNIQUE,
+    tipo VARCHAR(60) NOT NULL,
+    foreign key (id_cliente) references clientes(id_cliente)
+
 );
 
 CREATE TABLE vagas(
@@ -22,7 +25,7 @@ CREATE TABLE vagas(
 );
 
 CREATE TABLE entrada (
-    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id INTEGER  NOT NULL PRIMARY KEY,
     id_cliente INTEGER NOT NULL,
     id_veiculo INTEGER NOT NULL,
     data VARCHAR(15) not null,
@@ -33,36 +36,61 @@ CREATE TABLE entrada (
     foreign key (id_veiculo) references veiculos(id_veiculo)
 );
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Downloads/estacionamento2/src/clientes.csv'
-INTO TABLE clientes
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Downloads/estacionamento2/src/veiculo.csv'
-INTO TABLE veiculos
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
+create view vw_clientes as
+select c.id_cliente, c.nome_cliente, c.endereco, c.telefone, v.tipo, v.placa
+from clientes c inner join veiculos v
+on c.id_cliente = v.id_cliente;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Downloads/estacionamento2/src/vagas.csv'
-INTO TABLE vagas
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
+insert into clientes values(1,"Ana","Varjão","19 9856-765");
+insert into clientes values(2,"Renan","Sertãozinho","19 7756-775");
+insert into clientes values(3,"Yuki","JardimII","19 2756-785");
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Downloads/estacionamento2/src/entrada.csv'
-INTO TABLE entrada
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
 
 select * from clientes;
+
+insert into veiculos values(1,1,"KCT543","carro");
+insert into veiculos values(2,2,"KPP450","moto");
+insert into veiculos values(3,3,"KTT223","carro");
+
+
 select * from veiculos;
-select * from vagas;
-select * from entrada;
+
+
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2DES/pwbe/estacionamento2/src/clientes.csv'
+-- INTO TABLE clientes
+-- FIELDS TERMINATED BY ';'
+-- ENCLOSED BY '"'
+-- LINES TERMINATED BY '\r\n'
+-- IGNORE 1 ROWS;
+
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2DES/pwbe/estacionamento2/src/veiculo.csv'
+-- INTO TABLE veiculos
+-- FIELDS TERMINATED BY ';'
+-- ENCLOSED BY '"'
+-- LINES TERMINATED BY '\r\n'
+-- IGNORE 1 ROWS;
+
+
+
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2DES/pwbe/estacionamento2/src/vagas.csv'
+-- INTO TABLE vagas
+-- FIELDS TERMINATED BY ';'
+-- ENCLOSED BY '"'
+-- LINES TERMINATED BY '\r\n'
+-- IGNORE 1 ROWS;
+
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/2DES/pwbe/estacionamento2/src/entrada.csv'
+-- INTO TABLE entrada
+-- FIELDS TERMINATED BY ';'
+-- ENCLOSED BY '"'
+-- LINES TERMINATED BY '\r\n'
+-- IGNORE 1 ROWS;
+
+-- select * from veiculos;
+-- select * from clientes;
+-- select * from vagas;
+-- select * from entrada;
+-- select * from vw_cli;
+
 
