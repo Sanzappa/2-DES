@@ -1,0 +1,13 @@
+npx create-expo-app (project Name)
+
+npx expo start --web
+
+npx expo install react-native-web@~0.18.9 react-dom@18.1.0 @expo/webpack-config@^0.17.2
+
+
+
+
+
+https://reactnavigation.org/docs/hello-react-navigation
+
+https://reactnavigation.org/docs/bottom-tab-navigator/
