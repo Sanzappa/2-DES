@@ -5,7 +5,7 @@ export default function Home(){
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center' }} >
-      <Text>Pagina 2</Text>
+      <Text>Updates</Text>
     </View>
   );
 }

@@ -3,6 +3,8 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler';
 
 import Home from './pages/home';
 import Pagina2 from './pages/pag2';
@@ -52,9 +54,20 @@ function MyTabs() {
   );
 }
 
+// *COLOCA o drawer na function.
+
+// const Drawer = createDrawerNavigator();
+// <Drawer.Navigator useLegacyImplementation initialRouteName="Home">
+//         <Drawer.Screen name="Home" component={Home} />
+//         <Drawer.Screen name="Updates" component={Pagina2} />
+//         <Drawer.Screen name="Profile" component={Pagina3} />
+//       </Drawer.Navigator>
+
+
 export default function App() {
   return (
     <NavigationContainer>
+      
       <MyTabs />
     </NavigationContainer>
   );
