@@ -51,7 +51,7 @@ const listarPedidos = (req, res) => {
 }
 
 const deletarPedido = (req, res) => {
-    con.query(Item.toDelete, (err, result) => {
+    con.query(Item.toDelete(req.body), (err, result) => {
         if(err == null) {
             res.status(200).json(req.body).end();
         }else {
