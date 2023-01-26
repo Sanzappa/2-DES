@@ -4,16 +4,23 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './pages/home'
+import { useEffect, useState } from 'react';
 
 
 export default function App() {
+
+  const [pedidos, setPedidos] = useState([])
+
+  useEffect(() => {
+    listarPedidos()
+  }, [])
+
+  const listarPedidos = () => {
+    fetch('')
+  }
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    
   );
 }
 
