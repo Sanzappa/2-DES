@@ -1,1 +1,7 @@
+prisma init --datasource-provider mysql
+
+prisma db pull(Transforma bancos de dados ja criados)
+
+prisma migrate dev --name init
+
 https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#model-fields

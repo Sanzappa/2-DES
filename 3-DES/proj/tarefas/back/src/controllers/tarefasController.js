@@ -1,88 +1,73 @@
-const Item = require('../models/tarefas');
-const con = require('../models/tarefasDAO');
+const { PrismaClient } = require('@prisma/client')
 
-const listarTarefas = (req, res) => {
-    con.query(Item.toReadAll(), (err, result) => {
-        if (err == null)
-            res.status(201).json(result).end();
-        else
-            if (err.sqlState == 23000)
-                res.status(406).json(err).end();
-            else
-                res.status(500).json(err).end();
-    });
+const prisma = new PrismaClient()
+
+const listarTarefas = async (req, res) => {
+    const tarefas = await prisma.tarefas.findMany()
+
+    res.status(200).json(tarefas).end()
 }
 
-const Aberta = (req, res) => {
-    con.query(Item.toReadAberta (req.params), (err, result) => {
-        if (err == null)
-            res.status(201).json(result).end();
-        else
-            if (err.sqlState == 23000)
-                res.status(406).json(err).end();
-            else
-                res.status(500).json(err).end();
-    });
+const Aberta = async (req, res) => {
+    const tarefas = await prisma.tarefas.findMany({
+        where: {
+            status_tarefa: "1 - Aberta"
+        }
+    })
+
+    res.status(200).json(tarefas).end()
 }
 
-const Finalizada = (req, res) => {
-    con.query(Item.toReadFinalizada(req.params), (err, result) => {
-        if (err == null)
-            res.status(201).json(result).end();
-        else
-            if (err.sqlState == 23000)
-                res.status(406).json(err).end();
-            else
-                res.status(500).json(err).end();
-    });
+const Finalizada = async (req, res) => {
+    const tarefas = await prisma.tarefas.findMany({
+        where: {
+            status_tarefa: "2 - Finalizada"
+        }
+    })
+
+    res.status(200).json(tarefas).end()
 }
 
-const Cancelada = (req, res) => {
-    con.query(Item.toReadCancelada(req.params), (err, result) => {
-        if (err == null)
-            res.status(201).json(result).end();
-        else
-            if (err.sqlState == 23000)
-                res.status(406).json(err).end();
-            else
-                res.status(500).json(err).end();
-    });
+const Cancelada = async (req, res) => {
+    const tarefas = await prisma.tarefas.findMany({
+        where: {
+            status_tarefa: "3 - Cancelada"
+        }
+    })
+
+    res.status(200).json(tarefas).end()
 }
 
-const cadastrarTarefa = (req, res) => {
-    con.query(Item.toCreateTarefa(req.body), (err, result) => {
-        if (err == null)
-            res.status(201).end();
-        else
-            if (err.sqlState == 23000)
-                res.status(406).json(err).end();
-            else
-                res.status(500).json(err).end();
-    });
+const cadastrarTarefa = async (req, res) => {
+    const info = req.body
+
+    const tarefas = await prisma.tarefas.create({
+        data: info
+    })
+
+    res.status(200).json(tarefas).end()
 }
 
-const alterarHorarioFinalizada = (req, res) => {
-    con.query(Item.toUpdateFinalizada(req.body), (err, result) => {
-        if (err == null)
-            if (result.affectedRows > 0)
-                res.status(200).end();
-            else
-                res.status(404).end();
-        else
-            res.status(500).json(err).end();
-    });
+const alterarHorarioFinalizada = async (req, res) => {
+    const tarefas = await prisma.tarefas.update({
+        where: {
+            id_tarefa: Number(req.body.id_tarefa)
+        },
+        data: req.body
+    })
+
+    res.status(200).json(tarefas).end()
 }
 
-const alterarHorarioCancelada = (req, res) => {
-    con.query(Item.toUpdateCancelada(req.body), (err, result) => {
-        if (err == null)
-            if (result.affectedRows > 0)
-                res.status(200).end();
-            else
-                res.status(404).end();
-        else
-            res.status(500).json(err).end();
-    });
+const alterarHorarioCancelada = async (req, res) => {
+    const tarefas = await prisma.tarefas.update({
+        where: {
+            id_tarefa: Number(req.body.id_tarefa)
+        },
+        data: req.body
+    })
+
+    res.status(200).json(tarefas).end()
 }
 
 module.exports = {
@@ -93,5 +78,4 @@ module.exports = {
     cadastrarTarefa,
     alterarHorarioFinalizada,
     alterarHorarioCancelada
-
 }
