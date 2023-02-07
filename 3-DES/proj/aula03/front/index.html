@@ -9,7 +9,7 @@
     <title>Lojinhas</title>
 </head>
 
-<body>
+<body onload="loadProd()">
     <div class="header">
         <div class="header-coisas">
             <a href="./detalhes.html"><span>Detalhes</span></a>
@@ -20,15 +20,34 @@
         </div>
     </div>
     <div class="content">
-        <div class="conteudo">
+        <div class="info-conteudo">
+            <p>Nome</p>
+            <p>Valor</p>
+            <p>Setor</p>
+        </div>
+        <div class="conteudo model">
             <p id="nome">Parafuso</p>
             <p id="valor">R$0,99</p>
             <p id="id_setor">1</p>
         </div>
     </div>
+
+    <div class='modal escondido'>
+        <div class='modal-container'> <span class='close' onclick='toggleModal()'>X</span>
+            <input placeholder="Nome do Produto" type="text" id="prodName">
+            <input placeholder="Valor do Produto" type="number" id="prodValor">
+            <input placeholder="Setor do Produto" type="number" id="prodSetor">
+            <h4>Submit</h4>
+        </div>
+    </div>
     <div class="footer">
         <p>Nada com Nada</p>
     </div>
+    <div class="box-3">
+  <div class="btn btn-three" onclick="toggleModal()">
+    <span >Cadastrar Produto</span>
+  </div>
+</div>
 </body>
 <script src="./script.js"></script>
 
