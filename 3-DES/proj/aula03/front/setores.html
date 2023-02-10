@@ -20,15 +20,31 @@
         </div>
     </div>
     <div class="content">
+        <div class="info-conteudo">
+            <p>Nome</p>
+            <p>Comissao</p>
+        </div>
         <div class="conteudo model">
-            <p id="nome">Parafuso</p>
-            <p id="comissao">R$0,99</p>
-            
+            <div class="info"><p id="nome">Eletronicos</p></div>
+            <div class="info"><p id="comissao">8%</p></div>
+        </div>
+    </div>
+
+    <div class='modal escondido'>
+        <div class='modal-container'> <span class='close' onclick='toggleModal()'>X</span>
+            <input placeholder="Nome do Setor" type="text" id="nomeSetor">
+            <input placeholder="Comissao do setor(em %)" type="number" id="comissaoSetor">
+            <button onclick="cadastrarSetor()"><span>Cadastrar</span></button>
         </div>
     </div>
     <div class="footer">
         <p>Nada com Nada</p>
     </div>
+    <div class="box-3">
+  <div class="btn btn-three" onclick="toggleModal()">
+    <span >Cadastrar Setor</span>
+  </div>
+</div>
 </body>
 <script src="./script.js"></script>
 

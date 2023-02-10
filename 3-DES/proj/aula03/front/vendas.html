@@ -9,7 +9,7 @@
     <title>Lojinhas</title>
 </head>
 
-<body>
+<body onload="loadVendas()">
     <div class="header">
         <div class="header-coisas">
             <a href="./detalhes.html"><span>Detalhes</span></a>
@@ -20,15 +20,36 @@
         </div>
     </div>
     <div class="content">
+        <div class="info-conteudo">
+            <p>id Vendedor</p>
+            <p>Data</p>
+            <p>Produto</p>
+            <p>Quantidade</p>
+        </div>
         <div class="conteudo model">
-            <p id="nome">Parafuso</p>
-            <p id="valor">R$0,99</p>
-            <p id="id_setor">1</p>
+            <div class="info"><p id="id-vendedor">1</p></div>
+            <div class="info"><p id="data">24/08/2022</p></div>
+            <div class="info"><p id="Produto">é isso ai memo</p></div>
+            <div class="info"><p id="Qtd">é isso ai memo</p></div>
+        </div>
+    </div>
+
+    <div class='modal escondido'>
+        <div class='modal-container'> <span class='close' onclick='toggleModal()'>X</span>
+            <input placeholder="Id Do Vendedor" type="number" id="vendedorId">
+            <input placeholder="Id Do Produto" type="number" id="idProduto">
+            <input placeholder="Quantidade" type="number" id="Quantidade">
+            <button onclick="cadastrarVenda()"><span>Cadastrar</span></button>
         </div>
     </div>
     <div class="footer">
         <p>Nada com Nada</p>
     </div>
+    <div class="box-3">
+  <div class="btn btn-three" onclick="toggleModal()">
+    <span >Cadastrar Venda</span>
+  </div>
+</div>
 </body>
 <script src="./script.js"></script>
 

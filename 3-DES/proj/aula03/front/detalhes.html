@@ -20,15 +20,33 @@
         </div>
     </div>
     <div class="content">
+        <div class="info-conteudo">
+            <p>ID Produto</p>
+            <p>ID Venda</p>
+            <p>Quantidade</p>
+        </div>
         <div class="conteudo model">
-            <p id="id_produto">Parafuso</p>
-            <p id="id_venda">R$0,99</p>
-            <p id="quantidade">1</p>
+            <div class="info"><p id="id_produto">1</p></div>
+            <div class="info"><p id="id_venda">2</p></div>
+            <div class="info"><p id="quantidade">5</p></div>
+        </div>
+    </div>
+    <div class='modal escondido'>
+        <div class='modal-container'> <span class='close' onclick='toggleModal()'>X</span>
+            <input placeholder="ID do Produto" type="text" id="idProd">
+            <input placeholder="ID da Venda" type="number" id="idVenda">
+            <input placeholder="Quantidade" type="number" id="qtd">
+            <button onclick="cadastrarDetalhe()"><span>Cadastrar</span></button>
         </div>
     </div>
     <div class="footer">
         <p>Nada com Nada</p>
     </div>
+    <div class="box-3">
+        <div class="btn btn-three" onclick="toggleModal()">
+          <span >Cadastrar Detalhe</span>
+        </div>
+      </div>
 </body>
 <script src="./script.js"></script>
 

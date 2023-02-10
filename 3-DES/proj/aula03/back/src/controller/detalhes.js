@@ -15,11 +15,11 @@ const createDetalhe = async (req, res) => {
 const readDetalhes = async (req, res) => {
     let detalhe = await prisma.detalhe.findMany({
         select: {
-            produtos: true,
             id_produto: true,
             id_venda: true,
             quantidade: true,
-            
+            produto: true,
+            vendas: true
         }
     });
 

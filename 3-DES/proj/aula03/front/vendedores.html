@@ -20,14 +20,40 @@
         </div>
     </div>
     <div class="content">
+        <div class="info-conteudo">
+            <p>Nome</p>
+            <p>Salario</p>
+            <p>id Setor</p>
+        </div>
         <div class="conteudo model">
-            <p id="nome">roberto</p>
-            <p id="salario">R$1000,00</p>
-            <p id="id_setor">1</p>
+            <div class="info">
+                <p id="nomeDoVendedor">Rodinei</p>
+            </div>
+            <div class="info">
+                <p id="salario">2000</p>
+            </div>
+            <div class="info">
+                <p id="setor_id">1</p>
+            </div>
+        </div>
+    </div>
+
+    <div class='modal escondido'>
+        <div class='modal-container'> <span class='close' onclick='toggleModal()'>X</span>
+            <input placeholder="Nome do Vendedor" type="text" id="VendedorNome">
+            <input placeholder="Salario Do Vendedor" type="number" id="salarioVendedor">
+            <input placeholder="ID do Setor" type="number" id="id-setor">
+
+            <button onclick="cadastrarVendedor()"><span>Cadastrar</span></button>
         </div>
     </div>
     <div class="footer">
         <p>Nada com Nada</p>
+    </div>
+    <div class="box-3">
+        <div class="btn btn-three" onclick="toggleModal()">
+            <span>Cadastrar Vendedor</span>
+        </div>
     </div>
 </body>
 <script src="./script.js"></script>

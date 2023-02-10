@@ -24,7 +24,7 @@ const readAllSetor = async (req, res) => {
             nome: true,
             comissao: true,
             vendedor: true,
-            produtos: true
+            produtos: true,
         }
     });
 

@@ -3,17 +3,39 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const createVenda = async (req, res) => {
-    const info = req.body
+    let { id_vendedor } = req.body;
 
-    const vendas = await prisma.vendas.createMany({
-        data: info
-    })
+    let venda = await prisma.vendas.create({
+        data: {
+            id_vendedor,
+            data: new Date(),
+            detalhe: {
+                create: req.body.detalhe
+            }
+        }
+    });
 
-    res.status(200).json(vendas).end()
+    res.status(200).json(venda).end();
 }
 
 const readVendas = async (req, res) => {
-    let vendas = await prisma.vendas.findMany();
+    let vendas = await prisma.vendas.findMany({
+        select: {
+            data: true,
+            vendedor: {
+                select: {
+                    nome: true,
+                    id: true
+                }
+            },
+            detalhe: {
+                select: {
+                    quantidade: true,
+                    produto: true
+                }
+            }
+        }
+    });
 
     res.status(200).json(vendas).end();
 }

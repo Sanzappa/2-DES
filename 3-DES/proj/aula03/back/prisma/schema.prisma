@@ -50,5 +50,5 @@ model Detalhe {
   id_venda Int
   quantidade Int
   vendas Vendas @relation(fields: [id_venda], references: [id])
-  produtos Produtos @relation(fields: [id_produto], references: [id])
+  produto Produtos @relation(fields: [id_produto], references: [id])
 }
