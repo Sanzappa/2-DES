@@ -4,4 +4,12 @@ prisma db pull(Transforma bancos de dados ja criados)
 
 prisma migrate dev --name init
 
+prisma migrate reset
+
+
+DATABASE_URL="mysql://root:@localhost:3306/(nomedatabase)"
+
+
+
+
 https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#model-fields
